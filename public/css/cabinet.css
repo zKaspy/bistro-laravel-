@@ -1,0 +1,75 @@
+.cabinet__title {
+    padding-top: 120px;
+    margin: auto 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+}
+.cabinet__input {
+    padding-top: 40px;
+    margin: auto 100px;
+    max-width: 650px;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+.cab-input {
+    height: 30px;
+    width: 250px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(115, 121, 140, 0.32);
+    padding: 0px 15px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 40px;
+}
+.cab-label {
+    margin-right: 10px;
+}
+.cabinet__input-item {
+   margin-top: 10px;
+   margin-right: 200px;
+   display: flex;
+   justify-content: space-between;
+}
+.cab-button {
+    margin-top: 20px;
+    line-height: 27px;
+    background: no-repeat 50% 50% #EEEBE6;
+    border-radius: 11px;
+    border: 1px solid #EEEBE6;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    width: 150px;
+}
+.second-title {
+    padding-top: 50px;
+}
+table {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 100px;
+    margin-top: 20px;
+    font-size: 14px;
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td:first-child {
+    background: #fff;
+    padding: 10px 20px;
+    width: 240px;
+}
+th, td {
+    font-weight: 400;
+    border: 1px solid black;
+}
+td {
+    background: #fff;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}

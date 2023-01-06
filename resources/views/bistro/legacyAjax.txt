@@ -1,0 +1,65 @@
+$('.minus-item').on('click', function (e) {
+    e.preventDefault();
+    console.log(this.getAttribute('data-item'))
+    let parent = this.parentNode;
+    let sum = parseInt($(this).parent().find('.cart__order_list-item-qty').text());
+    sum = sum - 1
+    let total = parseInt($(this).parent().find('.cart__order_list-item-total').text());
+    let totalOrder = $('.cart__order_total-sum-ajax').text()
+    if (sum == 0) {
+        $.ajax ({
+            url: "{{ route('deleteCartItem') }}",
+            type: "POST",
+            data: {
+                id: this.getAttribute('data-item'),
+            },
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: (data) => {
+                $('.cart__order_total-sum-ajax').text(totalOrder-$(this).parent().find('.cart__order_list-item-total').data('price'))
+                $(this).parent(".cart__order_list-item").remove()
+            }, 
+        });
+        } else {
+            $.ajax ({
+            url: "{{ route('minusCartItem') }}",
+            type: "POST",
+            data: {
+                id: this.getAttribute('data-item'),
+            },
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: (data) => {
+                $(this).parent().find('.cart__order_list-item-qty').text(sum)
+                $(this).parent().find('.cart__order_list-item-total').text(total-$(this).parent().find('.cart__order_list-item-total').data('price') + ' ₽')
+                $('.cart__order_total-sum-ajax').text(totalOrder-$(this).parent().find('.cart__order_list-item-total').data('price'))
+            }, 
+        }); 
+        }
+    });
+    $('.plus-item').on('click', function (e) {
+    e.preventDefault();
+    console.log(this.getAttribute('data-item'))
+    let parent = this.parentNode;
+    let sum = parseInt($(this).parent().find('.cart__order_list-item-qty').text());
+    sum = sum + 1
+    let total = parseInt($(this).parent().find('.cart__order_list-item-total').text());
+    let totalOrder = parseInt($('.cart__order_total-sum-ajax').text())
+    $.ajax ({
+            url: " {{  route('plusCartItem') }}",
+            type: "POST",
+            data: {
+                id: this.getAttribute('data-item'),
+            },
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: (data) => {
+                $(this).parent().find('.cart__order_list-item-qty').text(sum)
+                $(this).parent().find('.cart__order_list-item-total').text(total+$(this).parent().find('.cart__order_list-item-total').data('price') + ' ₽')
+                $('.cart__order_total-sum-ajax').text(totalOrder+$(this).parent().find('.cart__order_list-item-total').data('price'))
+            }, 
+        });
+    });

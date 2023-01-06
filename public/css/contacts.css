@@ -1,0 +1,22 @@
+.contacts__title {
+    padding-top: 120px;
+    margin: auto 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+}
+.contacts__item {
+    padding-top: 40px;
+    margin: auto 100px;
+    max-width: 650px;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: justify;
+}
+.contacts__wrapper {
+    display: flex;
+    align-items: center;
+}
+.map {
+    padding: 60px 100px;
+}

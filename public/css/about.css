@@ -1,0 +1,40 @@
+.about_company-title {
+    padding-top: 120px;
+    margin: auto 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+}
+.about_company-info {
+    padding-top: 40px;
+    margin: auto 100px;
+    max-width: 650px;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: justify;
+    font-weight: 400;
+}
+.about__pizza {
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto 100px;
+}
+.about__pizza > li > img {
+    width: 300px;
+    height: 300px;
+}
+.about__pizza > li {
+    list-style: none;
+    margin-top: 20px;
+    flex-basis: 35%;
+}
+.about__pizza-text {
+    text-align: justify;
+    max-width: 305px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
